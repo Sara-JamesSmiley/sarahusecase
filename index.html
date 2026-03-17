@@ -56,6 +56,31 @@
     .btn-secondary { background:#fff; color:var(--text); border:1px solid var(--line); }
     .btn:hover { transform:translateY(-2px); }
     .stats { padding:22px; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .hero-portrait {
+      min-height: 540px;
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(23,20,17,.05), rgba(23,20,17,.18)),
+        url('https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/5opqgNzfucpYXRRdeC31/media/405d0dc5-9485-41e7-8d86-db6e0abed86d.png') center/cover no-repeat;
+      border-radius: var(--radius);
+      border: 1px solid rgba(23,20,17,.08);
+      box-shadow: var(--shadow);
+    }
+    .hero-portrait::after {
+      content: 'Official brand asset';
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.84);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
     .stat { padding:18px; border-radius:14px; background:var(--surface); border:1px solid rgba(23,20,17,.06); }
     .stat strong { display:block; font-size:29px; color:var(--gold); margin-bottom:4px; }
     .stat span { color:var(--muted); font-size:13px; }
@@ -108,13 +133,16 @@
             <a class="btn btn-secondary" href="#authority">See the numbers</a>
           </div>
         </div>
-        <div class="card stats">
-          <div class="stat"><strong>571+</strong><span>Executives consulted</span></div>
-          <div class="stat"><strong>$210M</strong><span>Sales generated before age 30</span></div>
-          <div class="stat"><strong>12,521+</strong><span>B2B reps trained</span></div>
-          <div class="stat"><strong>4,783+</strong><span>Paid students worldwide</span></div>
-          <div class="stat"><strong>58</strong><span>Fishing tournaments won</span></div>
-          <div class="stat"><strong>#6</strong><span>Early TeleNav employee</span></div>
+        <div>
+          <div class="hero-portrait"></div>
+          <div class="card stats" style="margin-top:16px;">
+            <div class="stat"><strong>571+</strong><span>Executives consulted</span></div>
+            <div class="stat"><strong>$210M</strong><span>Sales generated before age 30</span></div>
+            <div class="stat"><strong>12,521+</strong><span>B2B reps trained</span></div>
+            <div class="stat"><strong>4,783+</strong><span>Paid students worldwide</span></div>
+            <div class="stat"><strong>58</strong><span>Fishing tournaments won</span></div>
+            <div class="stat"><strong>#6</strong><span>Early TeleNav employee</span></div>
+          </div>
         </div>
       </div>
     </section>
