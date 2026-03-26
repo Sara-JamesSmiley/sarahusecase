@@ -1,1079 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>James Smiley | Executive Strategy & Personal Brand Authority</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>James Smiley | Executive Growth & Personal Brand Scale</title>
+  <meta name="description" content="James Smiley helps founders, consultants, and executive operators scale authority, positioning, and revenue with high-performance growth systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#0b0e14;
+      --panel:#141a25;
+      --panel-2:#101622;
+      --text:#edf3ff;
+      --muted:#aeb9d2;
+      --line:#273247;
+      --brand:#89a9ff;
+      --brand-2:#5a84ff;
+      --gold:#d3b36a;
+      --ok:#8cf1b4;
+      --radius:16px;
+      --max:1160px;
+      --shadow:0 24px 80px rgba(0,0,0,.32);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 90% -10%, rgba(137,169,255,.20), transparent 34%),
+        radial-gradient(circle at 10% 110%, rgba(211,179,106,.10), transparent 28%),
+        var(--bg);
+      line-height:1.6;
+    }
+    .container{width:min(var(--max),calc(100% - 40px));margin:0 auto}
+    .topbar{
+      position:sticky;top:0;z-index:20;
+      background:rgba(11,14,20,.82);backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.06)
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:12px;color:#dbe6ff}
+    .brand-dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--gold),#f1d090)}
+    .nav-links a{color:#c0cee9;text-decoration:none;margin-left:18px;font-size:14px}
+    .nav-links a:hover{color:#fff}
 
-:root {
-  --primary: #0a0a0a;
-  --accent: #c9a84c;
-  --accent-light: #e8c87a;
-  --accent-dark: #a07830;
-  --text: #ffffff;
-  --text-muted: #a0a0a0;
-  --text-dim: #666666;
-  --card-bg: #141414;
-  --card-border: #222222;
-  --section-alt: #0f0f0f;
-  --nav-height: 80px;
-}
+    .hero{padding:72px 0 38px}
+    .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:22px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-copy{padding:38px}
+    .eyebrow{display:inline-block;color:var(--gold);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;margin-bottom:14px}
+    h1,h2{font-family:"Playfair Display",serif;line-height:1.05;margin:0}
+    h1{font-size:clamp(42px,6.8vw,74px);margin-bottom:12px;max-width:10ch}
+    h2{font-size:clamp(30px,4vw,48px);margin-bottom:12px}
+    .lede{color:var(--muted);font-size:18px;max-width:62ch;margin:0 0 20px}
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border-radius:999px;text-decoration:none;font-weight:800}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#0b1225}
+    .btn-secondary{border:1px solid var(--line);color:#eaf0ff;background:rgba(255,255,255,.02)}
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--primary);
-  color: var(--text);
-  overflow-x: hidden;
-  line-height: 1.6;
-}
+    .hero-photo{padding:16px}
+    .hero-photo img{width:100%;height:100%;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,.1);min-height:380px}
 
-/* ── NAV ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0;
-  z-index: 1000; height: var(--nav-height);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 6%;
-  transition: background .35s, backdrop-filter .35s, box-shadow .35s;
-}
-nav.scrolled {
-  background: rgba(10,10,10,.94);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 1px 0 rgba(201,168,76,.18);
-}
-.nav-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.55rem; font-weight: 700;
-  color: var(--text); text-decoration: none;
-  letter-spacing: .02em;
-}
-.nav-logo span { color: var(--accent); }
-.nav-links {
-  display: flex; list-style: none;
-  gap: 2.5rem; align-items: center;
-}
-.nav-links a {
-  color: var(--text-muted); text-decoration: none;
-  font-size: .85rem; font-weight: 500;
-  letter-spacing: .07em; text-transform: uppercase;
-  transition: color .2s;
-}
-.nav-links a:hover { color: var(--accent); }
-.nav-cta {
-  background: var(--accent) !important;
-  color: var(--primary) !important;
-  padding: .6rem 1.5rem;
-  font-weight: 700 !important;
-  transition: background .2s !important;
-}
-.nav-cta:hover { background: var(--accent-light) !important; }
-.hamburger {
-  display: none; flex-direction: column;
-  gap: 5px; cursor: pointer; padding: 4px;
-}
-.hamburger span {
-  display: block; width: 25px; height: 2px;
-  background: var(--text); transition: .3s;
-}
+    .stats{padding:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .stat{background:var(--panel-2);border:1px solid var(--line);border-radius:12px;padding:14px}
+    .stat strong{display:block;font-size:26px;color:#cfe0ff}
+    .stat span{font-size:12px;color:#9fb1d2}
 
-/* ── MOBILE MENU ── */
-.mobile-overlay {
-  display: none; position: fixed; inset: 0;
-  background: rgba(10,10,10,.97); z-index: 999;
-  flex-direction: column; align-items: center; justify-content: center;
-  gap: 2.5rem;
-}
-.mobile-overlay.open { display: flex; }
-.mobile-overlay a {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.2rem; font-weight: 700;
-  color: var(--text); text-decoration: none;
-  transition: color .2s;
-}
-.mobile-overlay a:hover { color: var(--accent); }
-.mobile-close {
-  position: absolute; top: 2rem; right: 6%;
-  font-size: 2.5rem; color: var(--text);
-  background: none; border: none; cursor: pointer;
-}
+    section{padding:14px 0}
+    .section-card{padding:30px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .item{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}
+    .item h3{margin:0 0 8px;font-size:20px}
+    .item p{margin:0;color:var(--muted)}
 
-/* ── HERO ── */
-.hero {
-  min-height: 100vh;
-  display: flex; align-items: center;
-  position: relative; overflow: hidden;
-  padding: 0 6%; padding-top: var(--nav-height);
-}
-.hero-bg {
-  position: absolute; inset: 0;
-  background: url('/james-smiley.jpg') center/cover no-repeat;
-  filter: brightness(.22);
-}
-.hero-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(10,10,10,.97) 0%, rgba(10,10,10,.75) 55%, rgba(201,168,76,.04) 100%);
-}
-.hero-content {
-  position: relative; z-index: 2;
-  max-width: 860px;
-}
-.hero-eyebrow {
-  display: inline-block; color: var(--accent);
-  font-size: .78rem; font-weight: 600;
-  letter-spacing: .22em; text-transform: uppercase;
-  padding: .4rem 1rem; margin-bottom: 1.8rem;
-  border: 1px solid rgba(201,168,76,.3);
-}
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(3.2rem, 7.5vw, 6.5rem);
-  font-weight: 900; line-height: 1.04;
-  margin-bottom: 1.6rem; letter-spacing: -.02em;
-}
-.hero h1 em { font-style: italic; color: var(--accent); }
-.hero-sub {
-  font-size: clamp(1.05rem, 2vw, 1.3rem);
-  color: var(--text-muted); max-width: 600px;
-  margin-bottom: 2.8rem;
-  font-weight: 300; line-height: 1.75;
-}
-.hero-btns { display: flex; gap: 1.1rem; flex-wrap: wrap; }
-.btn-primary {
-  background: var(--accent); color: var(--primary);
-  padding: 1.1rem 2.4rem;
-  font-weight: 700; font-size: .9rem;
-  letter-spacing: .09em; text-transform: uppercase;
-  text-decoration: none; border: none; cursor: pointer;
-  transition: background .2s, transform .2s;
-  display: inline-block;
-}
-.btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); }
-.btn-ghost {
-  background: transparent; color: var(--text);
-  padding: 1.1rem 2.4rem;
-  font-weight: 600; font-size: .9rem;
-  letter-spacing: .09em; text-transform: uppercase;
-  text-decoration: none;
-  border: 1px solid rgba(255,255,255,.3);
-  transition: border-color .2s, color .2s, transform .2s;
-  display: inline-block;
-}
-.btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-.hero-scroll {
-  position: absolute; bottom: 2.5rem; left: 50%;
-  transform: translateX(-50%); z-index: 2;
-  display: flex; flex-direction: column;
-  align-items: center; gap: .6rem;
-  color: var(--text-muted); font-size: .7rem;
-  letter-spacing: .18em; text-transform: uppercase;
-  animation: bounceY 2.2s ease-in-out infinite;
-}
-.hero-scroll::after {
-  content: ''; display: block;
-  width: 1px; height: 44px;
-  background: linear-gradient(to bottom, var(--accent), transparent);
-}
-@keyframes bounceY {
-  0%,100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(9px); }
-}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    ul.clean{margin:0;padding-left:18px}
+    ul.clean li{margin:6px 0;color:var(--muted)}
 
-/* ── MEDIA BAR ── */
-.media-bar {
-  background: var(--card-bg);
-  border-top: 1px solid var(--card-border);
-  border-bottom: 1px solid var(--card-border);
-  padding: 2rem 6%;
-}
-.media-bar-inner {
-  max-width: 1140px; margin: 0 auto;
-  display: flex; align-items: center;
-  gap: 2.5rem; flex-wrap: wrap; justify-content: center;
-}
-.media-label {
-  font-size: .72rem; font-weight: 700;
-  letter-spacing: .2em; text-transform: uppercase;
-  color: var(--text-muted); white-space: nowrap;
-  padding-right: 1rem;
-  border-right: 1px solid var(--card-border);
-}
-.media-logos {
-  display: flex; align-items: center;
-  gap: 2.8rem; flex-wrap: wrap; justify-content: center;
-}
-.media-logo {
-  font-size: 1rem; font-weight: 700;
-  color: rgba(255,255,255,.22);
-  letter-spacing: .04em;
-  font-family: 'Playfair Display', serif;
-  transition: color .2s; cursor: default;
-}
-.media-logo:hover { color: rgba(255,255,255,.45); }
+    .icp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .icp{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+    .icp h4{margin:0 0 6px;font-size:17px}
+    .icp p{margin:0;color:var(--muted);font-size:14px}
 
-/* ── SECTIONS SHARED ── */
-section { padding: 7rem 6%; }
-.section-inner { max-width: 1140px; margin: 0 auto; }
-.section-eyebrow {
-  display: block; color: var(--accent);
-  font-size: .74rem; font-weight: 700;
-  letter-spacing: .24em; text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
-  font-weight: 700; line-height: 1.13;
-  margin-bottom: 1.25rem;
-}
-.section-title em { font-style: italic; color: var(--accent); }
-.section-sub {
-  color: var(--text-muted);
-  font-size: 1.1rem; max-width: 600px;
-  line-height: 1.75;
-}
+    .proof{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+    .proof .pill{border:1px solid var(--line);background:var(--panel-2);border-radius:999px;padding:8px 12px;font-size:13px;color:#c8d6f3}
 
-/* ── INTRO/ABOUT JAMES ── */
-.intro { background: var(--section-alt); }
-.intro-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem; align-items: center;
-}
-.intro-img-wrap { position: relative; }
-.intro-img {
-  width: 100%; aspect-ratio: 4/5;
-  object-fit: cover; display: block;
-}
-.intro-img-border {
-  position: absolute; bottom: -22px; right: -22px;
-  width: 62%; height: 62%;
-  border: 2px solid var(--accent);
-  z-index: -1; pointer-events: none;
-}
-.intro-text .section-sub { max-width: 100%; margin-bottom: 1.5rem; }
-.intro-quote {
-  border-left: 3px solid var(--accent);
-  padding-left: 1.5rem;
-  font-family: 'Playfair Display', serif;
-  font-style: italic; font-size: 1.25rem;
-  color: rgba(255,255,255,.75);
-  margin: 2rem 0; line-height: 1.65;
-}
+    .quote{font-size:23px;line-height:1.4;margin:0;color:#f2f6ff}
+    .quote-meta{margin-top:10px;color:#9eb2d7;font-size:14px}
 
-/* ── PROGRAMS ── */
-.programs { background: var(--primary); }
-.programs-hd { text-align: center; margin-bottom: 4rem; }
-.programs-hd .section-sub { margin: 1rem auto 0; }
-.programs-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-.prog-card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  padding: 0; overflow: hidden;
-  position: relative;
-  transition: transform .3s, border-color .3s, box-shadow .3s;
-  cursor: pointer;
-}
-.prog-card::after {
-  content: ''; position: absolute;
-  top: 0; left: 0; right: 0; height: 3px;
-  background: var(--accent);
-  transform: scaleX(0); transform-origin: left;
-  transition: transform .3s;
-}
-.prog-card:hover { transform: translateY(-7px); border-color: rgba(201,168,76,.35); box-shadow: 0 24px 64px rgba(0,0,0,.55); }
-.prog-card:hover::after { transform: scaleX(1); }
-.prog-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
-.prog-body { padding: 2rem; }
-.prog-tag {
-  font-size: .7rem; font-weight: 700;
-  letter-spacing: .2em; text-transform: uppercase;
-  color: var(--accent); display: block; margin-bottom: .75rem;
-}
-.prog-card h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.45rem; font-weight: 700;
-  margin-bottom: .75rem; line-height: 1.25;
-}
-.prog-card p {
-  color: var(--text-muted); font-size: .9rem;
-  line-height: 1.68; margin-bottom: 1.5rem;
-}
-.prog-link {
-  color: var(--accent); text-decoration: none;
-  font-size: .8rem; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase;
-  display: inline-flex; align-items: center; gap: .5rem;
-  transition: gap .2s;
-}
-.prog-link:hover { gap: 1rem; }
+    .cta{text-align:center;padding:34px}
+    .cta p{max-width:62ch;margin:8px auto 20px;color:var(--muted)}
 
-/* ── STATS ── */
-.stats-strip {
-  background: var(--accent);
-  padding: 4.5rem 6%;
-}
-.stats-strip .section-inner {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 2rem; text-align: center;
-}
-.stat { border-right: 1px solid rgba(10,10,10,.18); }
-.stat:last-child { border-right: none; }
-.stat-num {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.8rem,4.5vw,3.8rem);
-  font-weight: 900; color: var(--primary);
-  line-height: 1; margin-bottom: .4rem;
-}
-.stat-lbl {
-  font-size: .82rem; font-weight: 700;
-  color: rgba(10,10,10,.6);
-  letter-spacing: .06em; text-transform: uppercase;
-}
+    .footer{padding:34px 0 60px;color:#8ea1c8;font-size:14px}
 
-/* ── TESTIMONIALS ── */
-.testimonials { background: var(--section-alt); }
-.testi-hd { text-align: center; margin-bottom: 4rem; }
-.testi-hd .section-sub { margin: 1rem auto 0; }
-.testi-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 2rem;
-}
-.testi-card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  padding: 2.5rem;
-  transition: transform .3s, box-shadow .3s;
-}
-.testi-card:hover { transform: translateY(-5px); box-shadow: 0 22px 55px rgba(0,0,0,.45); }
-.stars { display: flex; gap: 3px; margin-bottom: 1.4rem; }
-.star {
-  width: 15px; height: 15px;
-  background: var(--accent);
-  clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
-}
-.testi-quote {
-  font-family: 'Playfair Display', serif;
-  font-style: italic; font-size: 1.05rem;
-  line-height: 1.75; color: rgba(255,255,255,.85);
-  margin-bottom: 2rem;
-}
-.testi-quote::before {
-  content: '\201C'; font-size: 3rem;
-  color: var(--accent); line-height: 0;
-  vertical-align: -.5em; margin-right: .2rem;
-}
-.testi-author { display: flex; align-items: center; gap: 1rem; }
-.testi-avatar {
-  width: 52px; height: 52px;
-  border-radius: 50%; object-fit: cover;
-  border: 2px solid var(--accent);
-}
-.testi-name { font-weight: 700; font-size: .88rem; margin-bottom: .18rem; }
-.testi-role { font-size: .76rem; color: var(--text-muted); }
-
-/* ── PODCAST FEATURE ── */
-.podcast-feature { background: var(--primary); }
-.podcast-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 5rem; align-items: center;
-}
-.podcast-img-wrap { position: relative; }
-.podcast-cover {
-  width: 100%; aspect-ratio: 1;
-  object-fit: cover; display: block;
-  box-shadow: 0 30px 80px rgba(0,0,0,.6);
-}
-.podcast-badge {
-  position: absolute; top: -15px; right: -15px;
-  background: var(--accent); color: var(--primary);
-  font-weight: 900; font-size: .72rem;
-  letter-spacing: .12em; text-transform: uppercase;
-  padding: .6rem 1rem;
-}
-.podcast-episodes { margin-top: 2.5rem; }
-.podcast-ep {
-  display: flex; align-items: center; gap: 1.25rem;
-  padding: 1.25rem 0;
-  border-bottom: 1px solid var(--card-border);
-  cursor: pointer; transition: color .2s;
-}
-.podcast-ep:first-child { border-top: 1px solid var(--card-border); }
-.podcast-ep:hover .ep-title { color: var(--accent); }
-.ep-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem; font-weight: 900;
-  color: rgba(201,168,76,.3);
-  min-width: 3rem;
-}
-.ep-info { flex: 1; }
-.ep-title { font-weight: 600; font-size: .9rem; margin-bottom: .3rem; transition: color .2s; }
-.ep-meta { font-size: .78rem; color: var(--text-muted); }
-.ep-play {
-  width: 36px; height: 36px;
-  border: 1px solid rgba(201,168,76,.4);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  color: var(--accent); font-size: .7rem;
-  transition: background .2s, border-color .2s;
-}
-.podcast-ep:hover .ep-play { background: var(--accent); border-color: var(--accent); color: var(--primary); }
-
-/* ── SPEAKING ── */
-.speaking { background: var(--section-alt); }
-.speaking-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 5rem; align-items: center;
-}
-.speaking-img {
-  width: 100%; aspect-ratio: 16/9;
-  object-fit: cover; display: block;
-}
-.speaking-events { margin-top: 2.5rem; }
-.speaking-event {
-  display: flex; gap: 1.5rem;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--card-border);
-}
-.event-date {
-  text-align: center; min-width: 60px;
-}
-.event-month {
-  font-size: .7rem; font-weight: 700;
-  letter-spacing: .15em; text-transform: uppercase;
-  color: var(--accent); display: block;
-}
-.event-day {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.2rem; font-weight: 900;
-  color: var(--text); line-height: 1;
-}
-.event-info {}
-.event-title { font-weight: 700; font-size: .95rem; margin-bottom: .3rem; }
-.event-location { font-size: .82rem; color: var(--text-muted); }
-
-/* ── BOOK SECTION ── */
-.book-section { background: var(--primary); }
-.book-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 5rem; align-items: center;
-}
-.book-mockup-wrap { position: relative; text-align: center; }
-.book-img {
-  width: 75%; max-width: 280px;
-  box-shadow: 30px 30px 80px rgba(0,0,0,.7),
-              -5px -5px 20px rgba(201,168,76,.1);
-  display: inline-block;
-}
-.book-badges {
-  display: flex; gap: 1rem; flex-wrap: wrap;
-  margin-top: 2rem;
-}
-.book-badge {
-  font-size: .72rem; font-weight: 700;
-  letter-spacing: .14em; text-transform: uppercase;
-  padding: .4rem .9rem;
-  border: 1px solid rgba(201,168,76,.4);
-  color: var(--accent);
-}
-.book-text .section-sub { max-width: 100%; margin-bottom: 2rem; }
-.book-bullets { list-style: none; margin-bottom: 2rem; }
-.book-bullets li {
-  padding: .7rem 0;
-  border-bottom: 1px solid var(--card-border);
-  font-size: .9rem; color: var(--text-muted);
-  display: flex; gap: 1rem; align-items: flex-start;
-}
-.book-bullets li::before {
-  content: '✦'; color: var(--accent);
-  font-size: .7rem; margin-top: .2rem; flex-shrink: 0;
-}
-
-/* ── OPT-IN ── */
-.optin-section { background: var(--section-alt); }
-.optin-inner { max-width: 720px; margin: 0 auto; text-align: center; }
-.optin-card {
-  background: var(--card-bg);
-  border: 1px solid rgba(201,168,76,.25);
-  padding: 4.5rem 3.5rem;
-  position: relative; overflow: hidden;
-}
-.optin-card::before {
-  content: ''; position: absolute;
-  top: 0; left: 0; right: 0; height: 4px;
-  background: linear-gradient(to right, var(--accent-dark), var(--accent), var(--accent-light));
-}
-.optin-eyebrow {
-  color: var(--accent); font-size: .74rem;
-  letter-spacing: .22em; text-transform: uppercase;
-  font-weight: 700; margin-bottom: 1rem; display: block;
-}
-.optin-card h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.9rem,3.8vw,2.8rem);
-  font-weight: 900; line-height: 1.14; margin-bottom: 1rem;
-}
-.optin-card p {
-  color: var(--text-muted); font-size: 1.05rem;
-  line-height: 1.75; margin-bottom: 2.5rem;
-}
-.optin-form { display: flex; max-width: 500px; margin: 0 auto; }
-.optin-input {
-  flex: 1; background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.15); border-right: none;
-  color: var(--text); padding: 1rem 1.25rem;
-  font-family: 'Inter', sans-serif; font-size: .9rem;
-  outline: none; transition: border-color .2s;
-}
-.optin-input::placeholder { color: var(--text-muted); }
-.optin-input:focus { border-color: var(--accent); }
-.optin-btn {
-  background: var(--accent); color: var(--primary);
-  border: none; padding: 1rem 1.8rem;
-  font-weight: 700; font-size: .82rem;
-  letter-spacing: .09em; text-transform: uppercase;
-  cursor: pointer; transition: background .2s; white-space: nowrap;
-}
-.optin-btn:hover { background: var(--accent-light); }
-.optin-privacy { font-size: .73rem; color: var(--text-dim); margin-top: 1rem; }
-
-/* ── FOOTER ── */
-footer {
-  background: #050505;
-  border-top: 1px solid var(--card-border);
-  padding: 5rem 6% 2.5rem;
-}
-.footer-inner { max-width: 1140px; margin: 0 auto; }
-.footer-top {
-  display: grid;
-  grid-template-columns: 2.2fr 1fr 1fr 1fr;
-  gap: 3rem; margin-bottom: 3.5rem;
-}
-.footer-brand-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem; font-weight: 700;
-  color: var(--text); text-decoration: none;
-  letter-spacing: .02em; display: block; margin-bottom: 1rem;
-}
-.footer-brand-logo span { color: var(--accent); }
-.footer-brand p {
-  font-size: .875rem; color: var(--text-muted);
-  line-height: 1.7; max-width: 270px;
-}
-.footer-socials { display: flex; gap: .75rem; margin-top: 1.5rem; }
-.footer-soc {
-  width: 38px; height: 38px;
-  border: 1px solid var(--card-border);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--text-muted); text-decoration: none;
-  font-size: .72rem; font-weight: 700; letter-spacing: .04em;
-  transition: border-color .2s, color .2s;
-}
-.footer-soc:hover { border-color: var(--accent); color: var(--accent); }
-.footer-col h4 {
-  font-size: .74rem; font-weight: 700;
-  letter-spacing: .17em; text-transform: uppercase;
-  margin-bottom: 1.4rem;
-}
-.footer-col ul { list-style: none; }
-.footer-col li { margin-bottom: .75rem; }
-.footer-col a {
-  color: var(--text-muted); text-decoration: none;
-  font-size: .875rem; transition: color .2s;
-}
-.footer-col a:hover { color: var(--accent); }
-.footer-bottom {
-  border-top: 1px solid var(--card-border);
-  padding-top: 1.75rem;
-  display: flex; justify-content: space-between;
-  align-items: center; flex-wrap: wrap; gap: 1rem;
-}
-.footer-copy { font-size: .78rem; color: var(--text-dim); }
-.footer-legal { display: flex; gap: 1.75rem; }
-.footer-legal a {
-  font-size: .78rem; color: var(--text-dim);
-  text-decoration: none; transition: color .2s;
-}
-.footer-legal a:hover { color: var(--text-muted); }
-
-/* ── SCROLL ANIMATIONS ── */
-.fade-up {
-  opacity: 0; transform: translateY(32px);
-  transition: opacity .75s ease, transform .75s ease;
-}
-.fade-up.visible { opacity: 1; transform: translateY(0); }
-.delay-1 { transition-delay: .1s; }
-.delay-2 { transition-delay: .2s; }
-.delay-3 { transition-delay: .3s; }
-.delay-4 { transition-delay: .4s; }
-
-/* ── RESPONSIVE ── */
-@media (max-width:1100px) {
-  .intro-grid,
-  .podcast-grid,
-  .speaking-grid,
-  .book-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .intro-img-wrap,
-  .podcast-img-wrap { max-width: 500px; margin: 0 auto; }
-  .programs-grid { grid-template-columns: 1fr 1fr; }
-  .footer-top { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width:768px) {
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  .programs-grid { grid-template-columns: 1fr; }
-  .stats-strip .section-inner { grid-template-columns: 1fr 1fr; }
-  .stat { border-right: none; border-bottom: 1px solid rgba(10,10,10,.18); padding-bottom: 1.5rem; }
-  .testi-grid { grid-template-columns: 1fr; }
-  .optin-form { flex-direction: column; }
-  .optin-input { border-right: 1px solid rgba(255,255,255,.15); border-bottom: none; }
-  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
-  .footer-bottom { flex-direction: column; text-align: center; }
-  section { padding: 5rem 5%; }
-}
-@media (max-width:480px) {
-  .hero h1 { font-size: 2.6rem; }
-  .hero-btns { flex-direction: column; }
-  .optin-card { padding: 2.5rem 1.5rem; }
-  .book-grid { grid-template-columns: 1fr; }
-}
-</style>
+    @media (max-width:980px){
+      .hero-grid,.split,.grid-3,.icp-grid,.stats,.proof{grid-template-columns:1fr}
+      .hero-copy,.section-card,.cta{padding:22px}
+      .nav-links{display:none}
+    }
+  </style>
 </head>
 <body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand"><span class="brand-dot"></span> James Smiley | JS Brands</div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#icp">ICPs</a>
+        <a href="#offers">Offers</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<!-- NAV -->
-<nav id="mainNav">
-  <a href="#" class="nav-logo">Your<span>Name</span></a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#programs">Programs</a></li>
-    <li><a href="#podcast">Podcast</a></li>
-    <li><a href="#testimonials">Success Stories</a></li>
-    <li><a href="#contact" class="nav-cta">Work With James</a></li>
-  </ul>
-  <div class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
-
-<div class="mobile-overlay" id="mobileMenu">
-  <button class="mobile-close" id="mobileClose">&times;</button>
-  <a href="#about">About</a>
-  <a href="#programs">Programs</a>
-  <a href="#podcast">Podcast</a>
-  <a href="#testimonials">Success Stories</a>
-  <a href="#contact">Work With James</a>
-</div>
-
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <span class="hero-eyebrow">&#9670; Best-Selling Author &amp; Business Strategist</span>
-    <h1>Stop Surviving.<br><em>Start Thriving.</em></h1>
-    <p class="hero-sub">The world's most results-driven framework for entrepreneurs who are ready to dominate their industry, build unstoppable momentum, and create the life they've always known was possible.</p>
-    <div class="hero-btns">
-      <a href="#contact" class="btn-primary">Claim Your Free Training &rarr;</a>
-      <a href="#about" class="btn-ghost">Discover My Story</a>
-    </div>
-  </div>
-  <div class="hero-scroll">Scroll</div>
-</section>
-
-<!-- AS SEEN ON -->
-<div class="media-bar">
-  <div class="media-bar-inner">
-    <span class="media-label">As Seen On</span>
-    <div class="media-logos">
-      <span class="media-logo">Forbes</span>
-      <span class="media-logo">CNN</span>
-      <span class="media-logo">Inc.</span>
-      <span class="media-logo">Entrepreneur</span>
-      <span class="media-logo">SUCCESS</span>
-      <span class="media-logo">Fast Company</span>
-      <span class="media-logo">HuffPost</span>
-    </div>
-  </div>
-</div>
-
-<!-- ABOUT JAMES -->
-<section class="intro" id="about">
-  <div class="section-inner">
-    <div class="intro-grid">
-      <div class="intro-img-wrap fade-up">
-        <img src="https://picsum.photos/seed/auth_portrait/600/750" alt="James Smiley" class="intro-img">
-        <div class="intro-img-border"></div>
-      </div>
-      <div class="intro-text">
-        <span class="section-eyebrow">My Story</span>
-        <h2 class="section-title fade-up">I Was Exactly Where <em>You Are</em> Right Now</h2>
-        <p class="section-sub fade-up delay-1">Fifteen years ago I was working 70-hour weeks, missing my family, and wondering if the success I craved was even real. I had the drive but lacked the system. I had the ambition but not the blueprint.</p>
-        <blockquote class="intro-quote fade-up delay-2">"The greatest gift you can give the world is to become everything you are capable of becoming."</blockquote>
-        <p class="section-sub fade-up delay-3">Today I've trained over 150,000 entrepreneurs across 47 countries, generated over $2 billion in client revenue, and built a global movement dedicated to peak performance, purpose-driven business, and lasting transformation.</p>
-        <br>
-        <a href="#programs" class="btn-primary fade-up delay-4" style="margin-top:1.5rem;">See How I Can Help &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROGRAMS -->
-<section class="programs" id="programs">
-  <div class="section-inner">
-    <div class="programs-hd fade-up">
-      <span class="section-eyebrow">Signature Programs</span>
-      <h2 class="section-title">Choose Your <em>Path to Mastery</em></h2>
-      <p class="section-sub">Three distinct pathways designed for wherever you are in your journey — from breakthrough beginnings to elite performance mastery.</p>
-    </div>
-    <div class="programs-grid">
-      <div class="prog-card fade-up delay-1">
-        <img src="https://picsum.photos/seed/prog1/700/394" alt="Breakthrough Blueprint" class="prog-img">
-        <div class="prog-body">
-          <span class="prog-tag">Foundation · 12 Weeks</span>
-          <h3>The Breakthrough Blueprint</h3>
-          <p>Your proven 12-week system for eliminating the mental blocks, building momentum, and creating your first $10K month — even if you're starting from zero.</p>
-          <a href="#" class="prog-link">Learn More &rarr;</a>
-        </div>
-      </div>
-      <div class="prog-card fade-up delay-2">
-        <img src="https://picsum.photos/seed/prog2/700/394" alt="Empire Accelerator" class="prog-img">
-        <div class="prog-body">
-          <span class="prog-tag">Accelerator · 6 Months</span>
-          <h3>Empire Accelerator</h3>
-          <p>A 6-month intensive for established entrepreneurs ready to scale from 6 to 7 figures while reclaiming their time, energy, and sense of purpose.</p>
-          <a href="#" class="prog-link">Learn More &rarr;</a>
-        </div>
-      </div>
-      <div class="prog-card fade-up delay-3">
-        <img src="https://picsum.photos/seed/prog3/700/394" alt="Titan Inner Circle" class="prog-img">
-        <div class="prog-body">
-          <span class="prog-tag">Elite Mastermind · Annual</span>
-          <h3>Titan Inner Circle</h3>
-          <p>An exclusive annual mastermind for 7–8 figure entrepreneurs demanding elite strategy, global community, and direct access to world-class mentorship.</p>
-          <a href="#" class="prog-link">Apply Now &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- STATS -->
-<div class="stats-strip">
-  <div class="section-inner">
-    <div class="stat fade-up">
-      <div class="stat-num">150K+</div>
-      <div class="stat-lbl">Lives Transformed</div>
-    </div>
-    <div class="stat fade-up delay-1">
-      <div class="stat-num">$2B+</div>
-      <div class="stat-lbl">Client Revenue Generated</div>
-    </div>
-    <div class="stat fade-up delay-2">
-      <div class="stat-num">47</div>
-      <div class="stat-lbl">Countries Reached</div>
-    </div>
-    <div class="stat fade-up delay-3">
-      <div class="stat-num">18+</div>
-      <div class="stat-lbl">Years of Expertise</div>
-    </div>
-  </div>
-</div>
-
-<!-- PODCAST FEATURE -->
-<section class="podcast-feature" id="podcast">
-  <div class="section-inner">
-    <div class="podcast-grid">
-      <div class="podcast-img-wrap fade-up">
-        <img src="https://picsum.photos/seed/podcast_cover/600/600" alt="Podcast Cover" class="podcast-cover">
-        <div class="podcast-badge">Top 1% Globally</div>
-      </div>
-      <div>
-        <span class="section-eyebrow">The Podcast</span>
-        <h2 class="section-title fade-up">Weekly Strategies to <em>Fuel Your Ascent</em></h2>
-        <p class="section-sub fade-up delay-1">New episodes every Tuesday. No guests who haven't built something real. No advice that doesn't come from the trenches. Just the unfiltered playbook for building something extraordinary.</p>
-        <div class="podcast-episodes fade-up delay-2">
-          <div class="podcast-ep">
-            <div class="ep-num">247</div>
-            <div class="ep-info">
-              <div class="ep-title">The $100K Conversation Framework Every Closer Needs</div>
-              <div class="ep-meta">52 min &nbsp;·&nbsp; 3 days ago</div>
-            </div>
-            <div class="ep-play">&#9654;</div>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <article class="card hero-copy">
+          <span class="eyebrow">Executive Growth Operator</span>
+          <h1>Build authority that converts.</h1>
+          <p class="lede">James Smiley helps founders, consultants, and expert-led businesses turn personal brand authority into measurable demand, premium clients, and scalable revenue systems.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact">Book Strategy Session</a>
+            <a class="btn btn-secondary" href="#icp">See ICP Focus</a>
           </div>
-          <div class="podcast-ep">
-            <div class="ep-num">246</div>
-            <div class="ep-info">
-              <div class="ep-title">Why 90% of Funnels Fail (and the 3 Fixes)</div>
-              <div class="ep-meta">44 min &nbsp;·&nbsp; 1 week ago</div>
-            </div>
-            <div class="ep-play">&#9654;</div>
+          <div class="stats">
+            <div class="stat"><strong>571+</strong><span>Executives consulted</span></div>
+            <div class="stat"><strong>$210M</strong><span>Sales before age 30</span></div>
+            <div class="stat"><strong>12,521+</strong><span>B2B reps trained</span></div>
           </div>
-          <div class="podcast-ep">
-            <div class="ep-num">245</div>
-            <div class="ep-info">
-              <div class="ep-title">Building a Personal Brand That Attracts Dream Clients</div>
-              <div class="ep-meta">61 min &nbsp;·&nbsp; 2 weeks ago</div>
-            </div>
-            <div class="ep-play">&#9654;</div>
-          </div>
-          <div class="podcast-ep">
-            <div class="ep-num">244</div>
-            <div class="ep-info">
-              <div class="ep-title">The Daily Ritual That Multiplied My Productivity by 5x</div>
-              <div class="ep-meta">38 min &nbsp;·&nbsp; 3 weeks ago</div>
-            </div>
-            <div class="ep-play">&#9654;</div>
-          </div>
-        </div>
-        <a href="#" class="btn-primary fade-up delay-3" style="margin-top:2rem;">Listen Free on Apple &amp; Spotify</a>
+        </article>
+        <aside class="card hero-photo">
+          <img src="/james-smiley.jpg" alt="James Smiley" />
+        </aside>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- SPEAKING -->
-<section class="speaking" id="speaking">
-  <div class="section-inner">
-    <div class="speaking-grid">
-      <div>
-        <span class="section-eyebrow">Live Events</span>
-        <h2 class="section-title fade-up">See Me <em>Live</em> This Year</h2>
-        <p class="section-sub fade-up delay-1">From intimate masterminds to stadium-filling keynotes, these are the events where breakthroughs happen in real time. Seats are always limited.</p>
-        <div class="speaking-events fade-up delay-2">
-          <div class="speaking-event">
-            <div class="event-date">
-              <span class="event-month">Apr</span>
-              <span class="event-day">12</span>
-            </div>
-            <div class="event-info">
-              <div class="event-title">Ignite Business Summit — Keynote</div>
-              <div class="event-location">New York, NY &nbsp;·&nbsp; Madison Square Garden</div>
-            </div>
-          </div>
-          <div class="speaking-event">
-            <div class="event-date">
-              <span class="event-month">May</span>
-              <span class="event-day">03</span>
-            </div>
-            <div class="event-info">
-              <div class="event-title">The Entrepreneur Experience — Workshop</div>
-              <div class="event-location">Los Angeles, CA &nbsp;·&nbsp; Beverly Hilton</div>
-            </div>
-          </div>
-          <div class="speaking-event">
-            <div class="event-date">
-              <span class="event-month">Jul</span>
-              <span class="event-day">18</span>
-            </div>
-            <div class="event-info">
-              <div class="event-title">Global Leadership Forum — Keynote</div>
-              <div class="event-location">London, UK &nbsp;·&nbsp; ExCeL Centre</div>
-            </div>
-          </div>
-          <div class="speaking-event">
-            <div class="event-date">
-              <span class="event-month">Sep</span>
-              <span class="event-day">26</span>
-            </div>
-            <div class="event-info">
-              <div class="event-title">Abundance Mastermind Weekend</div>
-              <div class="event-location">Scottsdale, AZ &nbsp;·&nbsp; Four Seasons Resort</div>
-            </div>
-          </div>
-        </div>
-        <a href="#" class="btn-ghost fade-up delay-3" style="margin-top:2rem;">View Full Schedule &rarr;</a>
-      </div>
-      <div class="fade-up delay-1">
-        <img src="https://picsum.photos/seed/speaking1/700/500" alt="Speaking on Stage" class="speaking-img">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials" id="testimonials">
-  <div class="section-inner">
-    <div class="testi-hd fade-up">
-      <span class="section-eyebrow">Success Stories</span>
-      <h2 class="section-title">Real Results From <em>Real People</em></h2>
-      <p class="section-sub">These aren't cherry-picked outliers. These are the standard results our clients achieve with the right system and support.</p>
-    </div>
-    <div class="testi-grid">
-      <div class="testi-card fade-up delay-1">
-        <div class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
-        <p class="testi-quote">Within 90 days of joining the Accelerator, I went from $8K/month to $52K/month. The frameworks don't just work — they fundamentally changed how I see business and myself.</p>
-        <div class="testi-author">
-          <img src="https://picsum.photos/seed/testi1/100/100" alt="Sarah K." class="testi-avatar">
+    <section id="about">
+      <div class="container card section-card">
+        <span class="eyebrow">About James</span>
+        <h2>Strategic clarity + execution speed</h2>
+        <div class="split">
           <div>
-            <div class="testi-name">Sarah K.</div>
-            <div class="testi-role">CEO, Wellness Brand — Austin, TX</div>
+            <p class="lede">James combines deep sales/marketing experience with operating discipline. His work focuses on message-market fit, offer architecture, content-to-client systems, and executive-level growth execution.</p>
           </div>
-        </div>
-      </div>
-      <div class="testi-card fade-up delay-2">
-        <div class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
-        <p class="testi-quote">I was skeptical. I'd tried every program. But this one actually delivered. My consulting firm hit 7 figures in month 8, and I'm working 20 fewer hours a week. Mind blown.</p>
-        <div class="testi-author">
-          <img src="https://picsum.photos/seed/testi2/100/100" alt="Marcus D." class="testi-avatar">
           <div>
-            <div class="testi-name">Marcus D.</div>
-            <div class="testi-role">Founder, Growth Consulting — New York, NY</div>
+            <ul class="clean">
+              <li>Fractional CMO strategy</li>
+              <li>High-ticket positioning and offer design</li>
+              <li>Team execution systems + accountability</li>
+              <li>Personal brand authority and conversion infrastructure</li>
+            </ul>
           </div>
         </div>
-      </div>
-      <div class="testi-card fade-up delay-3">
-        <div class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
-        <p class="testi-quote">The Titan Inner Circle connected me with exactly the right people at exactly the right time. Three joint ventures, two speaking gigs, and a $1.2M partnership all in year one.</p>
-        <div class="testi-author">
-          <img src="https://picsum.photos/seed/testi3/100/100" alt="Linda M." class="testi-avatar">
-          <div>
-            <div class="testi-name">Linda M.</div>
-            <div class="testi-role">Speaker &amp; Author — London, UK</div>
-          </div>
+        <div class="proof">
+          <div class="pill">Top-40 Under 40 B2B Consultant</div>
+          <div class="pill">TeleNav employee #6 growth era</div>
+          <div class="pill">Fortune 500 + startup advisory</div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- BOOK -->
-<section class="book-section">
-  <div class="section-inner">
-    <div class="book-grid">
-      <div class="book-mockup-wrap fade-up">
-        <img src="https://picsum.photos/seed/book_cover/400/560" alt="Book Cover" class="book-img">
-        <div class="book-badges">
-          <span class="book-badge">#1 New York Times</span>
-          <span class="book-badge">Wall Street Journal Bestseller</span>
-          <span class="book-badge">500K+ Copies Sold</span>
+    <section id="icp">
+      <div class="container card section-card">
+        <span class="eyebrow">JS Brands ICP Snapshot</span>
+        <h2>Who James serves best</h2>
+        <div class="icp-grid">
+          <article class="icp"><h4>Founder-Operator</h4><p>Needs clearer positioning and repeatable demand systems to scale beyond founder-led hustle.</p></article>
+          <article class="icp"><h4>Consultant / Coach</h4><p>Has expertise but needs premium offer architecture, authority messaging, and higher close quality.</p></article>
+          <article class="icp"><h4>Executive / Thought Leader</h4><p>Needs a stronger brand narrative and conversion path from influence to high-value engagements.</p></article>
+          <article class="icp"><h4>Service Business with High Ticket Potential</h4><p>Needs funnel simplification, better lead quality, and tighter sales process alignment.</p></article>
         </div>
       </div>
-      <div class="book-text">
-        <span class="section-eyebrow">The Book</span>
-        <h2 class="section-title fade-up">The <em>Unstoppable</em> Formula</h2>
-        <p class="section-sub fade-up delay-1">The definitive roadmap to building a seven-figure business while designing a life you're wildly passionate about — available wherever books are sold.</p>
-        <ul class="book-bullets fade-up delay-2">
-          <li>The 5-lever framework that 6-figure entrepreneurs use to break the 7-figure ceiling</li>
-          <li>How to build systems that generate revenue while you sleep</li>
-          <li>The mindset shifts that separate the ultra-successful from the merely ambitious</li>
-          <li>A proven 90-day launch plan for any product, service, or idea</li>
-          <li>Real case studies from 50+ entrepreneurs across 12 industries</li>
-        </ul>
-        <a href="#" class="btn-primary fade-up delay-3">Order Your Copy &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- OPT-IN -->
-<section class="optin-section" id="contact">
-  <div class="optin-inner">
-    <div class="optin-card fade-up">
-      <span class="optin-eyebrow">Free Masterclass</span>
-      <h2>The 5-Step System to Your First (or Next) $100K Month</h2>
-      <p>Join 150,000+ entrepreneurs who have used this exact framework to break through their plateau and build businesses that fund extraordinary lives. No fluff. No filler. Just results.</p>
-      <form class="optin-form" onsubmit="return false;">
-        <input type="email" class="optin-input" placeholder="Enter your best email address">
-        <button type="submit" class="optin-btn">Get Free Access &rarr;</button>
-      </form>
-      <p class="optin-privacy">&#128274; 100% private. No spam, ever. Unsubscribe anytime.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a href="#" class="footer-brand-logo">Your<span>Name</span></a>
-        <p>Empowering entrepreneurs worldwide to build businesses of lasting impact, significance, and extraordinary profit.</p>
-        <div class="footer-socials">
-          <a href="#" class="footer-soc">fb</a>
-          <a href="#" class="footer-soc">ig</a>
-          <a href="#" class="footer-soc">yt</a>
-          <a href="#" class="footer-soc">in</a>
-          <a href="#" class="footer-soc">tw</a>
+    <section id="offers">
+      <div class="container card section-card">
+        <span class="eyebrow">Core Offer Themes</span>
+        <h2>Built for revenue-focused growth</h2>
+        <div class="grid-3">
+          <article class="item"><h3>Authority Positioning</h3><p>Refine market narrative so ideal buyers understand value immediately.</p></article>
+          <article class="item"><h3>Offer + Funnel Design</h3><p>Design practical conversion architecture for premium services and programs.</p></article>
+          <article class="item"><h3>Execution Infrastructure</h3><p>Install rhythms, reporting, and ownership for predictable operational output.</p></article>
         </div>
       </div>
-      <div class="footer-col">
-        <h4>Programs</h4>
-        <ul>
-          <li><a href="#">Breakthrough Blueprint</a></li>
-          <li><a href="#">Empire Accelerator</a></li>
-          <li><a href="#">Titan Inner Circle</a></li>
-          <li><a href="#">Online Courses</a></li>
-          <li><a href="#">Speaking</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="#">Free Masterclass</a></li>
-          <li><a href="#">Podcast</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Books</a></li>
-          <li><a href="#">Media Kit</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Press</a></li>
-          <li><a href="#">Affiliates</a></li>
-          <li><a href="#">Careers</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">&copy; 2025 James Smiley International. All rights reserved.</p>
-      <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Earnings Disclaimer</a>
-      </div>
-    </div>
-  </div>
-</footer>
+    </section>
 
-<script>
-// Sticky nav
-const nav = document.getElementById('mainNav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 50);
-});
+    <section>
+      <div class="container card section-card">
+        <blockquote class="quote">“When positioning is precise and execution is disciplined, growth gets simpler and faster.”</blockquote>
+        <div class="quote-meta">— James Smiley</div>
+      </div>
+    </section>
 
-// Mobile menu
-document.getElementById('hamburger').addEventListener('click', () => {
-  document.getElementById('mobileMenu').classList.add('open');
-});
-document.getElementById('mobileClose').addEventListener('click', () => {
-  document.getElementById('mobileMenu').classList.remove('open');
-});
-document.querySelectorAll('.mobile-overlay a').forEach(a => {
-  a.addEventListener('click', () => {
-    document.getElementById('mobileMenu').classList.remove('open');
-  });
-});
+    <section id="contact">
+      <div class="container card cta">
+        <span class="eyebrow">Next Step</span>
+        <h2>Let’s build your growth system.</h2>
+        <p>For consulting, advisory, or strategic collaboration, connect directly and we’ll map the highest-leverage path.</p>
+        <a class="btn btn-primary" href="https://jamessmiley.com" target="_blank" rel="noreferrer">Visit JamesSmiley.com</a>
+      </div>
+    </section>
+  </main>
 
-// Scroll-triggered fade-up
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
-</script>
+  <footer class="footer">
+    <div class="container">James Smiley / JS Brands — Personal Brand & Executive Growth</div>
+  </footer>
 </body>
 </html>
